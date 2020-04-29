@@ -24,13 +24,26 @@ message Message3 {
     google.protobuf.Timestamp timestamp = 3;
 }
 
+// earlier version of the WrapperOneOf -- we'll try to use this to decode
+message WrapperOneOfEarlier {
+    oneof message {
+        Message1 msg1 = 1;
+        Message2 msg2 = 2;
+    }
+    // note: if you're not careful, this will conflict when you add messages
+    string other_field = 100; 
+}
+
 message WrapperOneOf {
     oneof message {
         Message1 msg1 = 1;
         Message2 msg2 = 2;
         Message3 msg3 = 3;
     }
+    // note: if you're not careful, this will conflict when you add messages
+    string other_field = 100; 
 }
+
 
 message WrapperAny {
     google.protobuf.Any message = 1;
