@@ -1,0 +1,14 @@
+# To learn more about .editorconfig see https://aka.ms/editorconfigdocs
+###############################
+# Core EditorConfig Options   #
+###############################
+# All files -- note we're using LF as the line endings for cross-platform consistency
+[*]
+indent_style = space
+end_of_line = lf
+# Code files
+[*.{cs,csx,vb,vbx}]
+indent_size = 4
+insert_final_newline = true
+charset = utf-8-bom
+

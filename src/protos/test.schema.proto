@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option csharp_namespace = "Test.Schema";
+option java_package = "test.schema";
+
+import "google/protobuf/timestamp.proto";
+
+package test.schema;
+
+
+message Message1 {
+    string info = 1;
+}
+
+message Message2 {
+    string info = 1;
+    string extra_info = 2;
+}
+
+message Message3 {
+    string info = 1;
+    string extra_info = 2;
+    google.protobuf.Timestamp timestamp = 3;
+}
+
+message WrapperAny {
+
+}
+
+message WrapperOneOf {
+
+}
+
+message WrapperCustom {
+    string type_id = 1;
+    bytes message = 2;
+}
