@@ -4,6 +4,7 @@ option csharp_namespace = "Test.Schema";
 option java_package = "test.schema";
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
 
 package test.schema;
 
@@ -23,12 +24,16 @@ message Message3 {
     google.protobuf.Timestamp timestamp = 3;
 }
 
-message WrapperAny {
-
+message WrapperOneOf {
+    oneof message {
+        Message1 msg1 = 1;
+        Message2 msg2 = 2;
+        Message3 msg3 = 3;
+    }
 }
 
-message WrapperOneOf {
-
+message WrapperAny {
+    google.protobuf.Any message = 1;
 }
 
 message WrapperCustom {
