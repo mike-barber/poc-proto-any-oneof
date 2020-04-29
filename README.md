@@ -1,4 +1,4 @@
-# Protobuf: testing multiple message types in a wrapper
+# Protobuf: testing multiple message types in a wrapper (C#)
 
 Examples covering three options:
 
