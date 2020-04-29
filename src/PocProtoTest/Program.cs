@@ -76,8 +76,16 @@ namespace PocProtoTest
                 // deserialize
                 var deser = WrapperAny.Parser.ParseFrom(bytes);
 
-                Console.WriteLine(deser);
+                if (deser.Message.TryUnpack(out Message1 m1))
+                    Console.WriteLine("Deserialized Message1: " + m1);
+
+                if (deser.Message.TryUnpack(out Message2 m2))
+                    Console.WriteLine("Deserialized Message2: " + m2);
+
+                if (deser.Message.TryUnpack(out Message3 m3))
+                    Console.WriteLine("Deserialized Message3: " + m3);
             }
+
             Test(wrap1);
             Test(wrap2);
             Test(wrap3);
